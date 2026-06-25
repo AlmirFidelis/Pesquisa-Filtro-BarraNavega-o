@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catálogo — SeriesGeeks</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="nav-brand">
+            <img src="img/logo.png" alt="Logo SeriesGeeks" />
+        </div>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="catalogo.html" class="active">Catálogo</a></li>
+            <li><a href="#">Favoritos</a></li>
+            <li><a href="#">Sobre</a></li>
+        </ul>
+
+    </nav>
+
+    <main class="container">
+
+        <section class="catalogo-header">
+            <h1>Catálogo de Séries</h1>
+            <p>Use os filtros para encontrar sua próxima série favorita.</p>
+        </section>
+
+        <!-- div.catalogo-layout envolve o aside E o conteudo -->
+        <div class="catalogo-layout">
+
+            <aside class="filtros" id="painelFiltros">
+
+                <div class="filtros-topo">
+                    <button class="btn-toggle-filtros" id="btnToggleFiltros">
+                        <h2>Filtros</h2>
+                        <span class="seta">▼</span>
+                    </button>
+                    <button class="btn-limpar-filtros" id="limparFiltros">
+                        Limpar tudo
+                    </button>
+                </div>
+
+                <div class="filtros-corpo" id="filtrosCorpo">
+
+                    <div class="filtro-grupo">
+                        <h3>Gênero</h3>
+                        <label class="filtro-opcao">
+                            <input type="radio" name="genero" value="todos" checked />
+                            <span>Todos</span>
+                        </label>
+                        <label class="filtro-opcao">
+                            <input type="radio" name="genero" value="acao" />
+                            <span>Ação</span>
+                        </label>
+                        <label class="filtro-opcao">
+                            <input type="radio" name="genero" value="comedia" />
+                            <span>Comédia</span>
+                        </label>
+                        <label class="filtro-opcao">
+                            <input type="radio" name="genero" value="crime" />
+                            <span>Crime</span>
+                        </label>
+                        <label class="filtro-opcao">
+                            <input type="radio" name="genero" value="drama" />
+                            <span>Drama</span>
+                        </label>
+                        <label class="filtro-opcao">
+                            <input type="radio" name="genero" value="ficcao" />
+                            <span>Ficção</span>
+                        </label>
+                        <label class="filtro-opcao">
+                            <input type="radio" name="genero" value="misterio" />
+                            <span>Mistério</span>
+                        </label>
+                    </div>
+
+                    <div class="filtro-grupo">
+                        <h3>Plataforma</h3>
+                        <label class="filtro-opcao">
+                            <input type="radio" name="plataforma" value="todas" checked />
+                            <span>Todas</span>
+                        </label>
+                        <label class="filtro-opcao">
+                            <input type="radio" name="plataforma" value="netflix" />
+                            <span>Netflix</span>
+                        </label>
+                        <label class="filtro-opcao">
+                            <input type="radio" name="plataforma" value="hbo" />
+                            <span>HBO</span>
+                        </label>
+                        <label class="filtro-opcao">
+                            <input type="radio" name="plataforma" value="prime" />
+                            <span>Prime Video</span>
+                        </label>
+                    </div>
+
+                    <div class="filtro-grupo">
+                        <h3>Avaliação mínima</h3>
+                        <label class="filtro-opcao">
+                            <input type="radio" name="avaliacao" value="0" checked />
+                            <span>Qualquer</span>
+                        </label>
+                        <label class="filtro-opcao">
+                            <input type="radio" name="avaliacao" value="8" />
+                            <span>⭐ 8.0 ou mais</span>
+                        </label>
+                        <label class="filtro-opcao">
+                            <input type="radio" name="avaliacao" value="8.5" />
+                            <span>⭐ 8.5 ou mais</span>
+                        </label>
+                        <label class="filtro-opcao">
+                            <input type="radio" name="avaliacao" value="9" />
+                            <span>⭐ 9.0 ou mais</span>
+                        </label>
+                    </div>
+
+                </div>
+
+            </aside>
+
+            <div class="catalogo-conteudo">
+
+                <div class="filtros-ativos" id="filtrosAtivos"></div>
+
+                <p class="resultado-count" id="resultadoCount">Mostrando 6 séries</p>
+
+                <section class="series-grid" id="seriesGrid">
+
+                    <div class="card" data-title="stranger things" data-genero="ficcao" data-plataforma="netflix"
+                        data-avaliacao="8.7">
+                        <div class="card-badge">Netflix</div>
+                        <img src="img/stranger-things.jpg" alt="Stranger Things" />
+                        <div class="card-body">
+                            <h3>Stranger Things</h3>
+                            <div class="card-meta">
+                                <span>⭐ 8.7</span>
+                                <span>🎭 Ficção</span>
+                                <span>📅 2016</span>
+                            </div>
+                            <p>Um grupo de amigos enfrenta forças sobrenaturais e experimentos secretos do governo.</p>
+                        </div>
+                    </div>
+
+                    <div class="card" data-title="the last of us" data-genero="drama" data-plataforma="hbo"
+                        data-avaliacao="8.8">
+                        <div class="card-badge">HBO</div>
+                        <img src="img/The-Last-Of-Us.webp" alt="The Last of Us" />
+                        <div class="card-body">
+                            <h3>The Last of Us</h3>
+                            <div class="card-meta">
+                                <span>⭐ 8.8</span>
+                                <span>🎭 Drama</span>
+                                <span>📅 2023</span>
+                            </div>
+                            <p>Em um mundo pós-apocalíptico, um sobrevivente protege uma jovem imune a uma praga mortal.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card" data-title="dark" data-genero="misterio" data-plataforma="netflix"
+                        data-avaliacao="8.8">
+                        <div class="card-badge">Netflix</div>
+                        <img src="img/dark.webp" alt="Dark" />
+                        <div class="card-body">
+                            <h3>Dark</h3>
+                            <div class="card-meta">
+                                <span>⭐ 8.8</span>
+                                <span>🎭 Mistério</span>
+                                <span>📅 2017</span>
+                            </div>
+                            <p>Quatro famílias interligadas desvendam uma conspiração de viagem no tempo em uma pequena
+                                cidade alemã.</p>
+                        </div>
+                    </div>
+
+                    <div class="card" data-title="wednesday" data-genero="comedia" data-plataforma="netflix"
+                        data-avaliacao="8.1">
+                        <div class="card-badge">Netflix</div>
+                        <img src="img/wednesday.jpg" alt="Wednesday" />
+                        <div class="card-body">
+                            <h3>Wednesday</h3>
+                            <div class="card-meta">
+                                <span>⭐ 8.1</span>
+                                <span>🎭 Comédia</span>
+                                <span>📅 2022</span>
+                            </div>
+                            <p>Wednesday Addams investiga crimes sobrenaturais enquanto navega pela sua nova escola.</p>
+                        </div>
+                    </div>
+
+                    <div class="card" data-title="the boys" data-genero="acao" data-plataforma="prime"
+                        data-avaliacao="8.7">
+                        <div class="card-badge">Prime</div>
+                        <img src="img/The-Boys.webp" alt="The Boys" />
+                        <div class="card-body">
+                            <h3>The Boys</h3>
+                            <div class="card-meta">
+                                <span>⭐ 8.7</span>
+                                <span>🎭 Ação</span>
+                                <span>📅 2019</span>
+                            </div>
+                            <p>Um grupo de vigilantes enfrenta super-heróis corruptos que abusam de seus poderes.</p>
+                        </div>
+                    </div>
+
+                    <div class="card" data-title="peaky blinders" data-genero="crime" data-plataforma="netflix"
+                        data-avaliacao="8.8">
+                        <div class="card-badge">Netflix</div>
+                        <img src="img/Peaky-Blinders.webp" alt="Peaky Blinders" />
+                        <div class="card-body">
+                            <h3>Peaky Blinders</h3>
+                            <div class="card-meta">
+                                <span>⭐ 8.8</span>
+                                <span>🎭 Crime</span>
+                                <span>📅 2013</span>
+                            </div>
+                            <p>A saga de uma família criminosa de Birmingham que busca poder e respeito no início do
+                                século XX.</p>
+                        </div>
+                    </div>
+
+                </section>
+
+                <div class="sem-resultado" id="semResultado">
+                    <p>😕 Nenhuma série encontrada com esses filtros.</p>
+                    <button class="btn-primary" id="btnLimparVazio">
+                        Limpar filtros
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

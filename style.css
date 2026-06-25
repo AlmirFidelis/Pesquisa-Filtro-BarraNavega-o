@@ -1,0 +1,710 @@
+/* ========================
+   VARIÁVEIS E RESET
+======================== */
+
+:root {
+    --cor-bg: #0f0f0f;
+    --cor-surface: #1a1a1a;
+    --cor-card: #222222;
+    --cor-primaria: #e50914;
+    --cor-texto: #ffffff;
+    --cor-texto-suave: #aaaaaa;
+    --cor-borda: #333333;
+    --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --raio-borda: 8px;
+    --sombra: 0 4px 20px rgba(0, 0, 0, 0.4);
+    --transicao: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--cor-bg);
+    color: var(--cor-texto);
+    font-family: var(--fonte-principal);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ========================
+   CONTAINER
+======================== */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ========================
+   NAVBAR
+======================== */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 32px;
+    background-color: var(--cor-surface);
+    border-bottom: 1px solid var(--cor-borda);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--sombra);
+}
+
+.nav-brand img {
+    max-width: 200px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-menu a {
+    padding: 8px 16px;
+    border-radius: var(--raio-borda);
+    color: var(--cor-texto-suave);
+    font-weight: 500;
+    transition: var(--transicao);
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--cor-texto);
+    background-color: var(--cor-primaria);
+}
+
+/* Botão hamburguer — escondido no desktop */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--cor-texto);
+    border-radius: 3px;
+    transition: var(--transicao);
+}
+
+/* ========================
+   HAMBURGUER ANIMADO
+======================== */
+
+.nav-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.nav-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ========================
+   HERO
+======================== */
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 60px 32px;
+    background: linear-gradient(135deg, var(--cor-surface) 0%, var(--cor-bg) 100%);
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 560px;
+}
+
+.hero-tag {
+    display: inline-block;
+    background-color: var(--cor-primaria);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 4px 12px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 16px;
+}
+
+.hero p {
+    color: var(--cor-texto-suave);
+    font-size: 1.05rem;
+    margin-bottom: 24px;
+}
+
+.hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.hero-meta span {
+    background-color: var(--cor-card);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    border: 1px solid var(--cor-borda);
+}
+
+.btn-primary {
+    background-color: var(--cor-primaria);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: var(--raio-borda);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transicao);
+}
+
+.btn-primary:hover {
+    background-color: #c2070f;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(229, 9, 20, 0.4);
+}
+
+.hero-image {
+    flex: 1;
+    max-width: 480px;
+}
+
+.hero-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: var(--sombra);
+    object-fit: cover;
+    max-height: 320px;
+}
+
+/* ========================
+   BUSCA
+======================== */
+
+.search-section {
+    padding: 48px 32px 24px;
+    text-align: center;
+}
+
+.search-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    max-width: 520px;
+    margin: 0 auto;
+    background-color: var(--cor-surface);
+    border: 1px solid var(--cor-borda);
+    border-radius: 40px;
+    padding: 4px 4px 4px 20px;
+    transition: var(--transicao);
+}
+
+.search-wrapper:focus-within {
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.2);
+}
+
+#searchInput {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--cor-texto);
+    font-size: 1rem;
+    padding: 8px 0;
+}
+
+#searchInput::placeholder {
+    color: var(--cor-texto-suave);
+}
+
+.btn-clear {
+    background-color: var(--cor-borda);
+    border: none;
+    color: var(--cor-texto-suave);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: var(--transicao);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-clear:hover {
+    background-color: var(--cor-primaria);
+    color: white;
+}
+
+.search-feedback {
+    margin-top: 12px;
+    color: var(--cor-texto-suave);
+    font-size: 0.9rem;
+    min-height: 20px;
+}
+
+/* ========================
+   GRID DE CARDS
+======================== */
+
+.series-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    padding: 24px 32px 60px;
+}
+
+.card {
+    background-color: var(--cor-card);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--cor-borda);
+    transition: var(--transicao);
+    position: relative;
+    z-index: 1;
+    cursor: pointer; 
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+    border-color: var(--cor-primaria);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    backdrop-filter: blur(4px);
+}
+
+.card-body {
+    padding: 16px;
+}
+
+.card-body h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.card-meta span {
+    font-size: 0.78rem;
+    color: var(--cor-texto-suave);
+    background-color: var(--cor-surface);
+    padding: 3px 10px;
+    border-radius: 20px;
+}
+
+.card-body p {
+    font-size: 0.88rem;
+    color: var(--cor-texto-suave);
+    line-height: 1.5;
+}
+
+/* Card oculto pela busca ou filtro */
+.card.oculto {
+    display: none;
+}
+
+/* ========================
+   CATÁLOGO — HEADER
+======================== */
+
+.catalogo-header {
+    padding: 48px 32px 24px;
+    text-align: center;
+}
+
+.catalogo-header h1 {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+}
+
+.catalogo-header p {
+    color: var(--cor-texto-suave);
+    font-size: 1rem;
+}
+
+/* ========================
+   CATÁLOGO — LAYOUT
+======================== */
+
+.catalogo-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 24px;
+    padding: 0 32px 60px;
+    align-items: start;
+}
+
+/* ========================
+   CATÁLOGO — FILTROS
+======================== */
+
+/* Corpo dos filtros visível por padrão no desktop */
+.filtros-corpo {
+    display: block;
+}
+
+/* Botão de toggle invisível no desktop */
+.btn-toggle-filtros {
+    display: none;
+    width: 100%;
+    background: none;
+    border: none;
+    color: var(--cor-texto);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+}
+
+.filtros {
+    background-color: var(--cor-surface);
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+    padding: 20px;
+    position: sticky;
+    top: 92px;
+    box-shadow: var(--sombra);
+    z-index: 100;
+}
+
+.filtros-topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.filtros-topo h2 {
+    font-size: 1.2rem;
+}
+
+.btn-limpar-filtros {
+    background: none;
+    border: none;
+    color: var(--cor-primaria);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transicao);
+    padding: 0;
+}
+
+.btn-limpar-filtros:hover {
+    opacity: 0.8;
+}
+
+.filtro-grupo {
+    margin-bottom: 24px;
+}
+
+.filtro-grupo h3 {
+    font-size: 1rem;
+    margin-bottom: 12px;
+    color: var(--cor-texto);
+}
+
+.filtro-opcao {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: var(--cor-texto-suave);
+    transition: var(--transicao);
+    user-select: none;
+}
+
+.filtro-opcao:hover {
+    background-color: var(--cor-card);
+    color: var(--cor-texto);
+}
+
+.filtro-opcao input {
+    accent-color: var(--cor-primaria);
+}
+
+/* ========================
+   CATÁLOGO — CONTEÚDO
+======================== */
+
+.catalogo-conteudo {
+    min-width: 0;
+}
+
+.filtros-ativos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.filtro-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--cor-card);
+    border: 1px solid var(--cor-borda);
+    color: var(--cor-texto);
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+}
+
+.filtro-tag button {
+    background: none;
+    border: none;
+    color: var(--cor-texto-suave);
+    cursor: pointer;
+    font-size: 0.9rem;
+    line-height: 1;
+    transition: var(--transicao);
+}
+
+.filtro-tag button:hover {
+    color: var(--cor-primaria);
+}
+
+.resultado-count {
+    margin-bottom: 18px;
+    color: var(--cor-texto-suave);
+    font-size: 0.95rem;
+}
+
+.sem-resultado {
+    display: none;
+    text-align: center;
+    background-color: var(--cor-surface);
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+    padding: 32px 20px;
+    margin-top: 20px;
+}
+
+.sem-resultado p {
+    color: var(--cor-texto-suave);
+    margin-bottom: 16px;
+}
+
+.sem-resultado.visivel {
+    display: block;
+}
+
+/* ========================
+   RESPONSIVIDADE — NAVBAR E INDEX
+======================== */
+
+@media (max-width: 768px) {
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--cor-surface);
+        border-top: 1px solid var(--cor-borda);
+        padding: 16px 0;
+        box-shadow: var(--sombra);
+        gap: 4px;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu a {
+        padding: 12px 24px;
+        border-radius: 0;
+        display: block;
+    }
+
+    .navbar {
+        position: relative;
+    }
+
+    .hero {
+        flex-direction: column;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero-meta {
+        justify-content: center;
+    }
+
+    .hero-image {
+        max-width: 100%;
+    }
+
+    .search-section {
+        padding: 32px 20px 16px;
+    }
+
+    .series-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        padding: 16px 20px 40px;
+        gap: 16px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .series-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* ========================
+   RESPONSIVIDADE — CATÁLOGO
+======================== */
+
+@media (max-width: 900px) {
+
+    .catalogo-layout {
+        grid-template-columns: 1fr;
+        padding: 0 20px 40px;
+    }
+
+    .filtros {
+        position: static;
+        z-index: auto;
+    }
+
+    /* Corpo dos filtros fechado por padrão no mobile */
+    .filtros-corpo {
+        display: none;
+        margin-top: 16px;
+    }
+
+    .filtros-corpo.aberto {
+        display: block;
+    }
+
+    /* Botão de toggle aparece só no mobile */
+    .btn-toggle-filtros {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .btn-toggle-filtros .seta {
+        display: inline-block;
+        font-size: 0.85rem;
+        transition: var(--transicao);
+        color: var(--cor-texto-suave);
+    }
+
+    .btn-toggle-filtros.aberto .seta {
+        transform: rotate(180deg);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .catalogo-header {
+        padding: 32px 20px 16px;
+    }
+
+    .catalogo-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .series-grid {
+        grid-template-columns: 1fr;
+        padding: 0;
+        gap: 16px;
+    }
+
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SeriesGeeks</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="nav-brand">
+            <img src="img/logo.png" alt="Logo SeriesGeeks" />
+        </div>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html" class="active">Início</a></li>
+            <li><a href="catalogo.html">Catálogo</a></li>
+            <li><a href="#">Favoritos</a></li>
+            <li><a href="#">Sobre</a></li>
+        </ul>
+
+    </nav>
+
+    <main class="container">
+
+        <section class="hero">
+            <div class="hero-content">
+                <span class="hero-tag">Em Alta</span>
+                <h1>Breaking Bad</h1>
+                <p>
+                    Um professor de química diagnosticado com câncer terminal se une
+                    a um ex-aluno para produzir e vender metanfetamina, a fim de
+                    garantir o futuro financeiro de sua família.
+                </p>
+                <div class="hero-meta">
+                    <span>⭐ 9.5</span>
+                    <span>🎭 Drama</span>
+                    <span>📅 2008</span>
+                    <span>🏁 5 Temporadas</span>
+                </div>
+                <button class="btn-primary">Ver Detalhes</button>
+            </div>
+
+            <div class="hero-image">
+                <img src="img/breaking-bad.jpg" alt="Breaking Bad" />
+            </div>
+        </section>
+
+        <section class="search-section">
+            <h2>Explorar Séries</h2>
+            <div class="search-wrapper">
+                <input type="text" id="searchInput" placeholder="Buscar série pelo nome..." autocomplete="off" />
+                <button id="clearSearch" class="btn-clear" title="Limpar busca">✕</button>
+            </div>
+            <p class="search-feedback" id="searchFeedback"></p>
+        </section>
+
+        <section class="series-grid" id="seriesGrid">
+
+            <div class="card" data-title="stranger things" data-genero="ficcao" data-plataforma="netflix">
+                <div class="card-badge">Netflix</div>
+                <img src="img/stranger-things.jpg" alt="Stranger Things" />
+                <div class="card-body">
+                    <h3>Stranger Things</h3>
+                    <div class="card-meta">
+                        <span>⭐ 8.7</span>
+                        <span>🎭 Ficção</span>
+                        <span>📅 2016</span>
+                    </div>
+                    <p>Um grupo de amigos enfrenta forças sobrenaturais e experimentos secretos do governo.</p>
+                </div>
+            </div>
+
+            <div class="card" data-title="the last of us" data-genero="drama" data-plataforma="hbo">
+                <div class="card-badge">HBO</div>
+                <img src="img/The-Last-Of-Us.webp" alt="The Last of Us" />
+                <div class="card-body">
+                    <h3>The Last of Us</h3>
+                    <div class="card-meta">
+                        <span>⭐ 8.8</span>
+                        <span>🎭 Drama</span>
+                        <span>📅 2023</span>
+                    </div>
+                    <p>Em um mundo pós-apocalíptico, um sobrevivente protege uma jovem imune a uma praga mortal.</p>
+                </div>
+            </div>
+
+            <div class="card" data-title="dark" data-genero="misterio" data-plataforma="netflix">
+                <div class="card-badge">Netflix</div>
+                <img src="img/dark.webp" alt="Dark" />
+                <div class="card-body">
+                    <h3>Dark</h3>
+                    <div class="card-meta">
+                        <span>⭐ 8.8</span>
+                        <span>🎭 Mistério</span>
+                        <span>📅 2017</span>
+                    </div>
+                    <p>Quatro famílias interligadas desvendam uma conspiração de viagem no tempo em uma pequena cidade
+                        alemã.</p>
+                </div>
+            </div>
+
+            <div class="card" data-title="wednesday" data-genero="comedia" data-plataforma="netflix">
+                <div class="card-badge">Netflix</div>
+                <img src="img/wednesday.jpg" alt="Wednesday" />
+                <div class="card-body">
+                    <h3>Wednesday</h3>
+                    <div class="card-meta">
+                        <span>⭐ 8.1</span>
+                        <span>🎭 Comédia</span>
+                        <span>📅 2022</span>
+                    </div>
+                    <p>Wednesday Addams investiga crimes sobrenaturais enquanto navega pela sua nova escola.</p>
+                </div>
+            </div>
+
+            <div class="card" data-title="the boys" data-genero="acao" data-plataforma="prime">
+                <div class="card-badge">Prime</div>
+                <img src="img/The-Boys.webp" alt="The Boys" />
+                <div class="card-body">
+                    <h3>The Boys</h3>
+                    <div class="card-meta">
+                        <span>⭐ 8.7</span>
+                        <span>🎭 Ação</span>
+                        <span>📅 2019</span>
+                    </div>
+                    <p>Um grupo de vigilantes enfrenta super-heróis corruptos que abusam de seus poderes.</p>
+                </div>
+            </div>
+
+            <div class="card" data-title="peaky blinders" data-genero="crime" data-plataforma="netflix">
+                <div class="card-badge">Netflix</div>
+                <img src="img/Peaky-Blinders.webp" alt="Peaky Blinders" />
+                <div class="card-body">
+                    <h3>Peaky Blinders</h3>
+                    <div class="card-meta">
+                        <span>⭐ 8.8</span>
+                        <span>🎭 Crime</span>
+                        <span>📅 2013</span>
+                    </div>
+                    <p>A saga de uma família criminosa de Birmingham que busca poder e respeito no início do século XX.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
